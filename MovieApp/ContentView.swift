@@ -12,19 +12,30 @@ struct ContentView: View {
     @StateObject var viewModel = MovieDBViewModel()
     
     var body: some View {
-        VStack {
+        ScrollView {
             if viewModel.tranding.isEmpty {
                 Text("No Results")
             } else {
-                ScrollView(.horizontal) {
+                HStack {
+                    Text("Tranding")
+                        .font(.title)
+                        .foregroundStyle(.white)
+                        .fontWeight(.heavy)
+                    Spacer()
+                }
+                .padding(.horizontal)
+                ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         ForEach(viewModel.tranding) { trandingItem in
-                            Text(trandingItem.title)
+                            TrandingCardView(trandingItem: trandingItem)
                         }
                     }
+                    .padding(.horizontal)
                 }
             }
+            Spacer()
         }
+        .background(Color(red:39/255, green:40/255, blue: 59/255).ignoresSafeArea())
         .padding()
         .onAppear {
             viewModel.loadTranding()
@@ -36,23 +47,41 @@ struct TrandingCardView: View {
     
     let trandingItem: TrandingItem
     var body: some View {
-        ZStack {
-            AsyncImage(url: trandingItem.poster_path) { image in
+        ZStack(alignment: .bottom) {
+            AsyncImage(url: trandingItem.backdropURL) { image in
                 image
                     .resizable()
                     .scaledToFill()
+                    .frame(width: 340, height: 200)
             } placeholder: {
+                Rectangle().fill(Color(red:61/255, green:61/255, blue:88/255))
+                    .frame(width: 340, height: 200)
                 ProgressView()
             }
             VStack {
                 HStack {
                     Text(trandingItem.title)
+                        .foregroundStyle(.white)
+                        .fontWeight(.heavy)
                     Spacer()
                     Image(systemName: "heart.fill")
                         .foregroundStyle(.red)
                 }
+                HStack {
+                    Image(systemName: "hand.thumbsup.fill")
+                        .foregroundStyle(.yellow)
+                    Text("\(trandingItem.vote_average.formatted())")
+                    Spacer()
+                }
+                .foregroundStyle(.yellow)
+                .fontWeight(.heavy)
+                
             }
+            .padding()
+            .background(Color(red:61/255, green:61/255, blue:88/255))
         }
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+        
     }
 }
 
@@ -102,6 +131,12 @@ struct TrandingItem: Identifiable, Decodable {
     let poster_path: String
     let title: String
     let vote_average: Float
+    let backdrop_path: String
+    
+    var backdropURL: URL {
+        let baseUrl = URL(string: "https://image.tmdb.org/t/p/w300")!
+        return baseUrl.appending(path: backdrop_path)
+    }
 }
 
 
