@@ -43,7 +43,8 @@ class MovieDBViewModel: ObservableObject {
     
     func search(term: String) {
         Task {
-            let url = URL(string: "https://api.themoviedb.org/3/search/movie?api_key=\(MovieDBViewModel.apiKey)&page=1&include_adult=false")!
+            let url = URL(string: "https://api.themoviedb.org/3/search/movie?api_key=\(MovieDBViewModel.apiKey)&language=en-US&page=1&include_adult=false&query=\(term)")!
+          
             do {
                 let (data, _) = try await URLSession.shared.data(from: url)
                 

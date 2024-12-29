@@ -38,9 +38,44 @@ struct ContentView: View {
                     }
                     Spacer()
                 } else {
-                    ForEach(viewModel.searchResults) { item in
-                        Text(item.title)
+                    LazyVStack{
+                        ForEach(viewModel.searchResults) { item in
+                            HStack {
+                                AsyncImage(url: item.backdropURL) { image in
+                                    image
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 80, height: 120)
+                                } placeholder: {
+                                    ProgressView()
+                                        .frame(width: 80, height: 120)
+                                }
+                                .clipped()
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+
+                                VStack(alignment: .leading) {
+                                    Text(item.title)
+                                        .foregroundStyle(.white)
+                                        .font(.headline)
+                                    
+                                    HStack {
+                                        Image(systemName: "hand.thumbsup.fill")
+                                            .foregroundStyle(.yellow)
+                                        Text("\(item.vote_average.formatted())")
+                                        Spacer()
+                                    }
+                                    .foregroundStyle(.yellow)
+                                    .fontWeight(.heavy)
+                                }
+                                Spacer()
+                            }
+                            .padding()
+                            .background(Color(red:61/255, green:61/255, blue:88/255))
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                            .padding()
+                        }
                     }
+                    
                 }
             }
             .background(Color(red:39/255, green:40/255, blue: 59/255))
@@ -56,6 +91,7 @@ struct ContentView: View {
         
         .onAppear {
             viewModel.loadTranding()
+            searchText = ""
         }
         .ignoresSafeArea()
     }
