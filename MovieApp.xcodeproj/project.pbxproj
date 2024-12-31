@@ -7,25 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DC7D79562D179F6100D5A1BC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7D79512D179F6100D5A1BC /* ContentView.swift */; };
+		DC49DCF52D21C221003CD1CD /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC49DCF42D21C221003CD1CD /* MovieDetailView.swift */; };
+		DC7D79562D179F6100D5A1BC /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7D79512D179F6100D5A1BC /* DiscoverView.swift */; };
 		DC7D79572D179F6100D5A1BC /* MovieAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7D79532D179F6100D5A1BC /* MovieAppApp.swift */; };
 		DC7D79582D179F6100D5A1BC /* TrandingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7D79542D179F6100D5A1BC /* TrandingCardView.swift */; };
 		DC7D79592D179F6100D5A1BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC7D794E2D179F6100D5A1BC /* Preview Assets.xcassets */; };
 		DC7D795A2D179F6100D5A1BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC7D79502D179F6100D5A1BC /* Assets.xcassets */; };
-		DC7D795C2D179FE100D5A1BC /* MovieDBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7D795B2D179FE100D5A1BC /* MovieDBViewModel.swift */; };
+		DC7D795C2D179FE100D5A1BC /* MovieDiscoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7D795B2D179FE100D5A1BC /* MovieDiscoverViewModel.swift */; };
 		DC7D795E2D17A01200D5A1BC /* TrandingResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7D795D2D17A01200D5A1BC /* TrandingResults.swift */; };
 		DC7D79602D17A03300D5A1BC /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7D795F2D17A03300D5A1BC /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC49DCF42D21C221003CD1CD /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		DC7D793A2D164F5F00D5A1BC /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7D794E2D179F6100D5A1BC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DC7D79502D179F6100D5A1BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DC7D79512D179F6100D5A1BC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DC7D79512D179F6100D5A1BC /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
 		DC7D79522D179F6100D5A1BC /* MovieApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MovieApp.entitlements; sourceTree = "<group>"; };
 		DC7D79532D179F6100D5A1BC /* MovieAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAppApp.swift; sourceTree = "<group>"; };
 		DC7D79542D179F6100D5A1BC /* TrandingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrandingCardView.swift; sourceTree = "<group>"; };
-		DC7D795B2D179FE100D5A1BC /* MovieDBViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDBViewModel.swift; sourceTree = "<group>"; };
+		DC7D795B2D179FE100D5A1BC /* MovieDiscoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDiscoverViewModel.swift; sourceTree = "<group>"; };
 		DC7D795D2D17A01200D5A1BC /* TrandingResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrandingResults.swift; sourceTree = "<group>"; };
 		DC7D795F2D17A03300D5A1BC /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,7 +85,7 @@
 			children = (
 				DC7D795D2D17A01200D5A1BC /* TrandingResults.swift */,
 				DC7D795F2D17A03300D5A1BC /* Movie.swift */,
-				DC7D795B2D179FE100D5A1BC /* MovieDBViewModel.swift */,
+				DC7D795B2D179FE100D5A1BC /* MovieDiscoverViewModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -91,8 +93,9 @@
 		DC7D79632D17A07900D5A1BC /* view */ = {
 			isa = PBXGroup;
 			children = (
-				DC7D79512D179F6100D5A1BC /* ContentView.swift */,
+				DC7D79512D179F6100D5A1BC /* DiscoverView.swift */,
 				DC7D79542D179F6100D5A1BC /* TrandingCardView.swift */,
+				DC49DCF42D21C221003CD1CD /* MovieDetailView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -170,12 +173,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC7D79562D179F6100D5A1BC /* ContentView.swift in Sources */,
+				DC7D79562D179F6100D5A1BC /* DiscoverView.swift in Sources */,
 				DC7D79602D17A03300D5A1BC /* Movie.swift in Sources */,
 				DC7D79572D179F6100D5A1BC /* MovieAppApp.swift in Sources */,
 				DC7D79582D179F6100D5A1BC /* TrandingCardView.swift in Sources */,
-				DC7D795C2D179FE100D5A1BC /* MovieDBViewModel.swift in Sources */,
+				DC7D795C2D179FE100D5A1BC /* MovieDiscoverViewModel.swift in Sources */,
 				DC7D795E2D17A01200D5A1BC /* TrandingResults.swift in Sources */,
+				DC49DCF52D21C221003CD1CD /* MovieDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +322,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				IPHONEOS_DEPLOYMENT_TARGET = 16;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
@@ -357,7 +361,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				IPHONEOS_DEPLOYMENT_TARGET = 16;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.0;

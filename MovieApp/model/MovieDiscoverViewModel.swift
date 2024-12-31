@@ -1,5 +1,5 @@
 //
-//  MovieDBViewModel.swift
+//  MovieDiscoverViewModel.swift
 //  MovieApp
 //
 //  Created by Sergey Zakurakin on 12/21/24.
@@ -8,10 +8,11 @@
 import Foundation
 
 @MainActor
-class MovieDBViewModel: ObservableObject {
+class MovieDiscoverViewModel: ObservableObject {
     
     @Published var tranding: [Movie] = []
     @Published var searchResults: [Movie] = []
+    @Published var movieCredits: MovieCredits?
     
     
     static let apiKey = "72619582d27fe03744c5b19e8b2e9920"
@@ -25,7 +26,7 @@ class MovieDBViewModel: ObservableObject {
     
     func loadTranding() {
         Task {
-            let url = URL(string: "https://api.themoviedb.org/3/trending/movie/day?api_key=\(MovieDBViewModel.apiKey)")!
+            let url = URL(string: "https://api.themoviedb.org/3/trending/movie/day?api_key=\(MovieDiscoverViewModel.apiKey)")!
             do {
                 let (data, _) = try await URLSession.shared.data(from: url)
                 
@@ -43,7 +44,7 @@ class MovieDBViewModel: ObservableObject {
     
     func search(term: String) {
         Task {
-            let url = URL(string: "https://api.themoviedb.org/3/search/movie?api_key=\(MovieDBViewModel.apiKey)&language=en-US&page=1&include_adult=false&query=\(term)")!
+            let url = URL(string: "https://api.themoviedb.org/3/search/movie?api_key=\(MovieDiscoverViewModel.apiKey)&language=en-US&page=1&include_adult=false&query=\(term)")!
           
             do {
                 let (data, _) = try await URLSession.shared.data(from: url)
@@ -58,5 +59,47 @@ class MovieDBViewModel: ObservableObject {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+
+    
+}
+
+@MainActor
+class MovieDetailsViewModel: ObservableObject {
+    
+    
+    @Published var movieCreditsResults: MovieCredits?
+    @Published var cast: [MovieCredits.Cast] = []
+    
+    func movieCredits(for movieID: Int) async {
+        
+            let url = URL(string: "https://api.themoviedb.org/3/movie/\(movieID)/credits?api_key=\(MovieDiscoverViewModel.apiKey)&language=en-US")!
+            
+            do {
+                let (data, _) = try await URLSession.shared.data(from: url)
+                
+                let movieCredits = try JSONDecoder().decode(MovieCredits.self, from: data)
+                self.movieCreditsResults = movieCredits
+                self.cast = movieCredits.cast.sorted(by: {$0.order < $1.order})
+                
+            } catch {
+                print(error.localizedDescription)
+            
+        }
+    }
+    
+}
+
+struct MovieCredits: Decodable {
+    
+    let id: Int?
+    let cast: [Cast]
+    
+    struct Cast: Decodable, Identifiable {
+        let name: String
+        let id: Int
+        let character: String
+        let order: Int
     }
 }

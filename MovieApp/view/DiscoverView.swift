@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  DiscoverView.swift
 //  MovieApp
 //
 //  Created by Sergey Zakurakin on 12/20/24.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct DiscoverView: View {
     
-    @StateObject var viewModel = MovieDBViewModel()
+    @StateObject var viewModel = MovieDiscoverViewModel()
     @State var searchText = ""
     
     var body: some View {
@@ -30,7 +30,12 @@ struct ContentView: View {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
                                 ForEach(viewModel.tranding) { trandingItem in
-                                    TrandingCardView(trandingItem: trandingItem)
+                                    NavigationLink {
+                                        MovieDetailView(movie: trandingItem)
+                                        
+                                    } label: {
+                                            TrandingCardView(trandingItem: trandingItem)
+                                    }
                                 }
                             }
                             .padding(.horizontal)
@@ -99,5 +104,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    DiscoverView()
 }
