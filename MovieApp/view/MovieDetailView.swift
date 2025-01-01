@@ -76,7 +76,7 @@ struct MovieDetailView: View {
                     
                     ScrollView(.horizontal) {
                         LazyHStack {
-                            ForEach(viewModel.cast) { cast in
+                            ForEach(viewModel.profiles) { cast in
                                 
                                 CastView(cast: cast)
                             }
@@ -103,6 +103,7 @@ struct MovieDetailView: View {
         .fontWeight(.bold)
         .task {
             await viewModel.movieCredits(for: movie.id)
+            await viewModel.loadCastProfiles()
         }
         
     }
@@ -115,15 +116,24 @@ struct MovieDetailView: View {
 
 struct CastView: View {
     
-    let cast: MovieCredits.Cast
+    let cast: CastProfile
     
     var body: some View {
         VStack {
+            
+            AsyncImage(url: cast.photoURL) { image in
+                image
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 100, height: 120)
+                    .clipShape(RoundedRectangle(cornerRadius: 15))
+            } placeholder: {
+                ProgressView()
+                    .frame(width: 100, height: 120)
+            }
             Text(cast.name)
-            
-//            AsyncImage(url: <#T##URL?#>, scale: <#T##CGFloat#>, content: <#T##(Image) -> View#>, placeholder: <#T##() -> View#>)
-            
-            
+//                .frame(width: 100)
+//                .lineLimit(0)
         }
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DC49DCF52D21C221003CD1CD /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC49DCF42D21C221003CD1CD /* MovieDetailView.swift */; };
+		DC49DCF72D24F89E003CD1CD /* MovieDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC49DCF62D24F89E003CD1CD /* MovieDetailsViewModel.swift */; };
 		DC7D79562D179F6100D5A1BC /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7D79512D179F6100D5A1BC /* DiscoverView.swift */; };
 		DC7D79572D179F6100D5A1BC /* MovieAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7D79532D179F6100D5A1BC /* MovieAppApp.swift */; };
 		DC7D79582D179F6100D5A1BC /* TrandingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7D79542D179F6100D5A1BC /* TrandingCardView.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		DC49DCF42D21C221003CD1CD /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
+		DC49DCF62D24F89E003CD1CD /* MovieDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModel.swift; sourceTree = "<group>"; };
 		DC7D793A2D164F5F00D5A1BC /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7D794E2D179F6100D5A1BC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DC7D79502D179F6100D5A1BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				DC7D795D2D17A01200D5A1BC /* TrandingResults.swift */,
 				DC7D795F2D17A03300D5A1BC /* Movie.swift */,
 				DC7D795B2D179FE100D5A1BC /* MovieDiscoverViewModel.swift */,
+				DC49DCF62D24F89E003CD1CD /* MovieDetailsViewModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC49DCF72D24F89E003CD1CD /* MovieDetailsViewModel.swift in Sources */,
 				DC7D79562D179F6100D5A1BC /* DiscoverView.swift in Sources */,
 				DC7D79602D17A03300D5A1BC /* Movie.swift in Sources */,
 				DC7D79572D179F6100D5A1BC /* MovieAppApp.swift in Sources */,
