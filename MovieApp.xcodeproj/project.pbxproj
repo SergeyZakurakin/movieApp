@@ -17,6 +17,7 @@
 		DC7D795C2D179FE100D5A1BC /* MovieDiscoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7D795B2D179FE100D5A1BC /* MovieDiscoverViewModel.swift */; };
 		DC7D795E2D17A01200D5A1BC /* TrandingResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7D795D2D17A01200D5A1BC /* TrandingResults.swift */; };
 		DC7D79602D17A03300D5A1BC /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7D795F2D17A03300D5A1BC /* Movie.swift */; };
+		DC9FA0E12D25A5B400DABD77 /* CastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FA0E02D25A5B400DABD77 /* CastView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		DC7D795B2D179FE100D5A1BC /* MovieDiscoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDiscoverViewModel.swift; sourceTree = "<group>"; };
 		DC7D795D2D17A01200D5A1BC /* TrandingResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrandingResults.swift; sourceTree = "<group>"; };
 		DC7D795F2D17A03300D5A1BC /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		DC9FA0E02D25A5B400DABD77 /* CastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				DC7D79512D179F6100D5A1BC /* DiscoverView.swift */,
 				DC7D79542D179F6100D5A1BC /* TrandingCardView.swift */,
 				DC49DCF42D21C221003CD1CD /* MovieDetailView.swift */,
+				DC9FA0E02D25A5B400DABD77 /* CastView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				DC49DCF72D24F89E003CD1CD /* MovieDetailsViewModel.swift in Sources */,
 				DC7D79562D179F6100D5A1BC /* DiscoverView.swift in Sources */,
 				DC7D79602D17A03300D5A1BC /* Movie.swift in Sources */,
+				DC9FA0E12D25A5B400DABD77 /* CastView.swift in Sources */,
 				DC7D79572D179F6100D5A1BC /* MovieAppApp.swift in Sources */,
 				DC7D79582D179F6100D5A1BC /* TrandingCardView.swift in Sources */,
 				DC7D795C2D179FE100D5A1BC /* MovieDiscoverViewModel.swift in Sources */,
